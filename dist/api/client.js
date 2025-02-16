@@ -30,13 +30,19 @@ class ApiClient {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const response = yield this.client.post(url, data);
+                // Verifica se a resposta contém um status de erro
+                if (response.data && response.data.status === 'error') {
+                    throw new Error(response.data.message || 'Erro desconhecido');
+                }
                 return response.data;
             }
             catch (error) {
                 if (axios_1.default.isAxiosError(error)) {
+                    // Se for um erro do Axios, lança a mensagem de erro
                     throw new Error(`API Error: ${error.message}`);
                 }
-                throw new Error('Unknown error occurred');
+                // Se for um erro lançado manualmente (status === 'error'), lança a mensagem
+                throw error;
             }
         });
     }
