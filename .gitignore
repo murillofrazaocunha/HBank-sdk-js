@@ -22,7 +22,6 @@ logs/*
 *.sw?
 
 # Build directories
-dist/
 build/
 
 # Dependency directories
