@@ -2,12 +2,14 @@
 
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
+const API_BASE_URL = 'https://hight.me'; // Link fixo da API
+
 export class ApiClient {
     private client: AxiosInstance;
 
-    constructor(baseURL: string, apiKey: string) {
+    constructor(apiKey: string) {
         this.client = axios.create({
-            baseURL,
+            baseURL: API_BASE_URL, // Usa o link fixo
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${apiKey}`, // Adiciona o Bearer Token

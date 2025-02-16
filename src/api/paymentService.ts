@@ -10,8 +10,8 @@ import {
 export class PaymentService {
     private apiClient: ApiClient;
 
-    constructor(baseURL: string, apiKey: string) {
-        this.apiClient = new ApiClient(baseURL, apiKey);
+    constructor(apiKey: string) {
+        this.apiClient = new ApiClient(apiKey); // Passa apenas a chave de API
     }
 
     public async createPaymentLink(
@@ -21,7 +21,6 @@ export class PaymentService {
     }
 
     public async getPaymentStatus(id: string): Promise<PaymentStatusResponse> {
-        // Usa POST mesmo para consultar o status
         return this.apiClient.post<PaymentStatusResponse>('/api/getPayment', { id });
     }
 }

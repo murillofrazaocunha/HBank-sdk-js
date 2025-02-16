@@ -13,8 +13,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentService = void 0;
 const client_1 = require("./client");
 class PaymentService {
-    constructor(baseURL, apiKey) {
-        this.apiClient = new client_1.ApiClient(baseURL, apiKey);
+    constructor(apiKey) {
+        this.apiClient = new client_1.ApiClient(apiKey); // Passa apenas a chave de API
     }
     createPaymentLink(data) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -23,7 +23,6 @@ class PaymentService {
     }
     getPaymentStatus(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            // Usa POST mesmo para consultar o status
             return this.apiClient.post('/api/getPayment', { id });
         });
     }

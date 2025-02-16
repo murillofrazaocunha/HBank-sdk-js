@@ -15,10 +15,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiClient = void 0;
 const axios_1 = __importDefault(require("axios"));
+const API_BASE_URL = 'https://hight.me'; // Link fixo da API
 class ApiClient {
-    constructor(baseURL, apiKey) {
+    constructor(apiKey) {
         this.client = axios_1.default.create({
-            baseURL,
+            baseURL: API_BASE_URL, // Usa o link fixo
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${apiKey}`, // Adiciona o Bearer Token

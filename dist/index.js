@@ -5,7 +5,7 @@ exports.createPaymentClient = createPaymentClient;
 const paymentService_1 = require("./api/paymentService");
 Object.defineProperty(exports, "PaymentService", { enumerable: true, get: function () { return paymentService_1.PaymentService; } });
 // Função de inicialização do cliente (opcional)
-function createPaymentClient(baseURL, apiKey) {
-    return new paymentService_1.PaymentService(baseURL, apiKey);
+function createPaymentClient(apiKey) {
+    return new paymentService_1.PaymentService(apiKey);
 }
 //# sourceMappingURL=index.js.map

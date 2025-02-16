@@ -1,5 +1,5 @@
 export declare class ApiClient {
     private client;
-    constructor(baseURL: string, apiKey: string);
+    constructor(apiKey: string);
     post<T>(url: string, data: any): Promise<T>;
 }

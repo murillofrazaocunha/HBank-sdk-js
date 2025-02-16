@@ -12,6 +12,6 @@ export { CreatePaymentLinkRequest, CreatePaymentLinkResponse, PaymentStatusRespo
 export { PaymentService };
 
 // Função de inicialização do cliente (opcional)
-export function createPaymentClient(baseURL: string, apiKey: string): PaymentService {
-    return new PaymentService(baseURL, apiKey);
+export function createPaymentClient(apiKey: string): PaymentService {
+    return new PaymentService(apiKey);
 }
