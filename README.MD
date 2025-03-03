@@ -76,7 +76,7 @@ Cria um link de pagamento.
     - `paymentData` (objeto): Dados do pagamento.
         - `amount` (string): Valor do pagamento (ex: `"100.00"`).
         - `description` (string): Descrição do pagamento.
-        - `notification_url` (string): URL para receber notificações.
+        - `notification_url` (string): URL para receber notificações (opcional).
         - `redirect` (string): URL para redirecionamento após o pagamento.
         - `cupons` (objeto): Cupons de desconto (opcional).
 - **Retorno**:
